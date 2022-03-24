@@ -2,7 +2,7 @@
 Author: Rodolfo Ferro @ Datlacuache
 Twitter: @rodo_ferro
 
-Script: Tools module.
+Script: Dataset tools module.
 """
 
 from glob import glob

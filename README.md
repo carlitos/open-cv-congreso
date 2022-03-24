@@ -30,4 +30,4 @@ extrae frames de los mismos.
 
 - [X] Agregar función para extraer frames de un video
 - [X] Agregar función para iterar sobre videos en folder
-- [ ] Agregar función detectar rostros y recortar recuadros
+- [ ] Agregar función para detectar + recortar rostros y generar un dataset
