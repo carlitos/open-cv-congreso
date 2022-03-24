@@ -1,7 +1,7 @@
 # open-cv-congreso
 
 
-## Instalación de dependencias ⚙️
+### Instalación de dependencias ⚙️
 
 1. Instalación de `pipenv`:
     ```bash
@@ -17,3 +17,15 @@
     ```bash
     pipenv install -r requirements.txt
     ```
+
+
+### Uso 💻
+
+Para extraer frames de un video, puedes tomar como referencia el script
+`main.py`. Dicho script toma un video de prueba y extrae algunos frames.
+
+
+### To Do
+
+- [ ] Agregar función para iterar sobre videos en folder
+- [ ] Agregar función detectar rostros y recortar recuadros
