@@ -21,8 +21,9 @@
 
 ### Uso 💻
 
-Para extraer frames de un video, puedes tomar como referencia el script
-`main.py`. Dicho script toma un video de prueba y extrae algunos frames.
+Para extraer frames de una carpeta con videos, puedes tomar como referencia
+el script `main.py`. Dicho script procesa cada video de una carpeta de entrada
+extrae frames de los mismos.
 
 
 ### To Do

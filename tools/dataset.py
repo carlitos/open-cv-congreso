@@ -82,7 +82,23 @@ def extract_frames_from_folder(input_dir,
                                starting_id=1,
                                frame_step=30,
                                extension='jpg'):
-    """Extracts frames from folder."""
+    """Extracts frames from folder.
+
+    Parameters
+    ----------
+    input_dir : str
+        The path to the input directory.
+    output_dir : str
+        The path to the output directory.
+    prefix_name : str
+        The prefix name for the output frames.
+    starting_id : int, optional
+        The start id for the output frames.
+    frame_step : int, optional
+        The frame step for the output frames (used for fps).
+    extension : str, optional
+        The extension for the output frames.
+    """
 
     # List sorted videos from folder
     videos = glob(os.path.join(input_dir, '*.mp4'))
@@ -92,7 +108,9 @@ def extract_frames_from_folder(input_dir,
     next_id = starting_id
 
     # Iterate over videos
-    for video in videos:
+    n_videos = len(videos)
+    for index, video in enumerate(videos):
+        print(f'[INFO] Processing video {index + 1}/{n_videos}')
         next_id = extract_frames_from_video(video,
                                             output_dir,
                                             prefix_name=prefix_name,
@@ -100,4 +118,4 @@ def extract_frames_from_folder(input_dir,
                                             frame_step=frame_step,
                                             extension=extension)
 
-    print(f'[INFO] {next_id - starting_id} frames extracted')
+    print(f'[INFO] In total, {next_id - starting_id} frames were extracted!')
