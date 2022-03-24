@@ -27,5 +27,6 @@ Para extraer frames de un video, puedes tomar como referencia el script
 
 ### To Do
 
-- [ ] Agregar función para iterar sobre videos en folder
+- [X] Agregar función para extraer frames de un video
+- [X] Agregar función para iterar sobre videos en folder
 - [ ] Agregar función detectar rostros y recortar recuadros

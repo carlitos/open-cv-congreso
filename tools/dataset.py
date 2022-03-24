@@ -5,6 +5,7 @@ Twitter: @rodo_ferro
 Script: Tools module.
 """
 
+from glob import glob
 import os
 
 from tqdm import tqdm
@@ -22,7 +23,7 @@ def extract_frames_from_video(input_video,
     Parameters
     ----------
     input_video : str
-        The path to the input video file.
+        The path to the input video file. Must be a mp4 video.
     output_dir : str
         The path to the output directory.
     prefix_name : str
@@ -40,12 +41,7 @@ def extract_frames_from_video(input_video,
         The following (starting) id for file names.
     """
 
-    # Get raw file name
-    file_name = input_video.split('/')[-1]
-    file_name = file_name.split('.')[:-1]
-    file_name = ''.join(file_name)
-
-    # If folder does not exist, create it
+    # If output folder does not exist, create it
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -78,3 +74,30 @@ def extract_frames_from_video(input_video,
     print(f'[INFO] {frame_id - starting_id} frames extracted')
 
     return frame_id
+
+
+def extract_frames_from_folder(input_dir,
+                               output_dir,
+                               prefix_name='img',
+                               starting_id=1,
+                               frame_step=30,
+                               extension='jpg'):
+    """Extracts frames from folder."""
+
+    # List sorted videos from folder
+    videos = glob(os.path.join(input_dir, '*.mp4'))
+    videos = sorted(videos)
+
+    # Initialize frame IDs and video capture
+    next_id = starting_id
+
+    # Iterate over videos
+    for video in videos:
+        next_id = extract_frames_from_video(video,
+                                            output_dir,
+                                            prefix_name=prefix_name,
+                                            starting_id=next_id,
+                                            frame_step=frame_step,
+                                            extension=extension)
+
+    print(f'[INFO] {next_id - starting_id} frames extracted')
