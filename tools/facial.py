@@ -17,7 +17,27 @@ def extract_faces_from_image(image_path,
                              scale_factor=1.3,
                              min_neighbors=5,
                              extension='jpg'):
-    """Detects faces in an image."""
+    """Detects faces in an image.
+
+    Writes detected faces as images to the specified output directory.
+
+    Parameters
+    ----------
+    image_path : str
+        Path to the image.
+    cascade_path : str
+        Path to the cascade file.
+    output_dir : str
+        Path to the output directory.
+    padding : int
+        Padding to add to the detected faces.
+    scale_factor : float
+        Scale factor to apply to the image.
+    min_neighbors : int
+        Minimum neighbors to apply to the image.
+    extension : str
+        Extension to use for the output files.
+    """
 
     # If output folder does not exist, create it
     if not os.path.exists(output_dir):
