@@ -7,7 +7,7 @@ Script: Main script.
 
 from tools.dataset import extract_frames_from_folder
 from tools.facial import extract_faces_from_image
-
+from tools.dataset import extract_frames_from_video
 
 def main():
     """Main function."""
@@ -33,6 +33,10 @@ if __name__ == '__main__':
     # main()
 
     # Extract faces
-    extract_faces_from_image('assets/test.jpeg',
+    extract_faces_from_image('assets/frames/img_0000011867.jpg',
                              'haarcascades/haarcascade_frontalface_alt.xml',
                              'faces')
+
+    # Extract frames from video
+    # extract_frames_from_video('assets/sesion.mp4',
+    #                          'assets/frames')
