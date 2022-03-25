@@ -1,11 +1,16 @@
 # Extras
 Pipfile.lock
 *.mp4
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+
+/faces/*
+/assets/frames/*
 
 # C extensions
 *.so
